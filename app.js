@@ -1,7 +1,8 @@
-'use strict';
-console.log('hello');
-console.log('hello');
 
+
+'use strict';
+
+console.log('hello');
 
 let products = document.getElementById('products');
 let imgOne = document.getElementById('productOne');
@@ -92,7 +93,49 @@ function handleShowResults() {
   }
   resultButton.removeEventListener('click', handleShowResults);
 
+  let productNames = [];
+  let productViews = [];
+  let productClicks = [];
+
+  for (let i = 0; i < productArray.length; i++) {
+    productNames.push(productArray[i].itemName);
+    productViews.push(productArray[i].views);
+    productClicks.push(productArray[i].clicks);
+  }
+  console.log(productNames);
+
+  console.log(productNames);
+
+  let resultsGraph = document.getElementById('results-graph').getContext('2d');
+
+  let resultsData = {
+    type: 'bar',
+    data: {
+      labels: productNames,
+      datasets: [
+
+        {
+          fillColor: '#48A497',
+          strokeColor: '#48A4D1',
+          label: 'views',
+          data: productViews
+        },
+
+        {
+          fillColor: '#48A497',
+          strokeColor: '#48A4D1',
+          label: 'clicks',
+          data: productClicks
+        },
+      ]
+    }
+
+  };
+  new Chart(resultsGraph, resultsData);
 }
+
+
+
 
 
 function handleImageClick(event) {
@@ -126,48 +169,6 @@ function handleImageClick(event) {
 
 renderRandomImage();
 
-
-/*
-function drawResultsGraph() {
-  (() => {
-    const canvas = document.querySelector('#canvas');
-    if (!canvas.getContext) {
-      return;
-    }
-
-    canvas.width = 500;
-    canvas.height = 500;
-
-    let resultsGraph = document.getElementById('canvas').getContext('2d');
-    new Chart(resultsGraph).Line(resultsData);
-
-    let resultsData = {
-      labels : ["January","February","March","April","May","June"],
-      datasets : [
-        {
-          fillColor : "rgba(172,194,132,0.4)",
-          strokeColor : "#ACC26D",
-          pointColor : "#fff",
-          pointStrokeColor : "#9DB86D",
-          data : [203,156,99,251,305,247]
-        }
-      ]
-    };
-
-    let productNames = [];
-    let productViews = [];
-    let productClicks = [];
-  
-    for (let i = 0; i < productArray.length; i++) {
-      productNames.push(productArray[i].itemName);
-      productViews.push(productArray[i].views);
-      productClicks.push(productArray[i].clicks);
-    }
-    console.log(productNames);
-
-  })();
-}
-drawResultsGraph();
-*/
 products.addEventListener('click', handleImageClick);
 resultButton.addEventListener('click', handleShowResults);
+

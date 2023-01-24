@@ -128,7 +128,15 @@ ul li {
     justify-content: center;
 }
 
+#results-graph {
+    display:flex;
+    justify-content: center;
+    width: auto;
+    height:auto;
+    margin:auto;
+    margin-bottom:10px;
+}
+
 canvas {
     border: thin solid black;
-    background-color: white;
 }
