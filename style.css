@@ -1,5 +1,5 @@
 body{
-    background-color: #F1F0CC
+    background-color: #F1F0CC;
 }
 
 main{
@@ -16,7 +16,8 @@ header{
     justify-content: center;
     margin:auto;
     margin-top: 3px;
-    
+    background-color: rgba(213, 191, 134, .7);
+
 }
 
 .header h1{
@@ -26,12 +27,13 @@ header{
     text-align: center;
     font-size: 3rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #3F0D12;
+    color: rgba(63, 13, 18);
+    
 }
 
 #results-summary-column{
     display:flex;
-    background-color: #D5BF86;
+    background-color: rgba(213, 191, 134, .7);
     flex-direction: column;
     width:30%;
     height:auto;
@@ -51,6 +53,9 @@ h2 {
     padding: .5rem;
     text-align: center;
     width: 100%;
+    color: rgba(63, 13, 18);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
 }
 
 #products{
@@ -86,6 +91,17 @@ h2 {
     display:flex;
     justify-content: center;
     padding:1rem;
+    
+}
+
+button {
+    background-color: rgb(242, 218, 157);
+    border-radius: 10%;
+    color: rgba(63, 13, 18);
+}
+
+button:hover {
+    background-color: #B19B73;
 }
 #view-results{
     width:50px;
