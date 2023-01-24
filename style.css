@@ -2,13 +2,14 @@ body{
     background-color: #F1F0CC;
 }
 
-main{
+#upper-content{
     display: flex;
     flex-direction: row;
     width:auto;
     justify-content: center;
     margin:10px;
 }
+
 header{
     display: flex;
     border: thin solid black;
@@ -45,6 +46,7 @@ header{
     width: 70%;
     justify-content: center;
     justify-content: space-between;
+    
 }
 
 h2 {
@@ -67,7 +69,6 @@ h2 {
 }
 
 #products img{
-    display: flex;
     border: thick black solid;
     border-radius: 20%;
     width: 25%;
@@ -120,4 +121,14 @@ ul {
 
 ul li {
     padding:.25rem;
+}
+
+#canvas-div {
+    display:flex;
+    justify-content: center;
+}
+
+canvas {
+    border: thin solid black;
+    background-color: white;
 }

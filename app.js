@@ -11,7 +11,6 @@ let imgThree = document.getElementById('productThree');
 let resultButton = document.getElementById('viewResults');
 let resultsContainer = document.getElementById('results-container');
 
-
 let voteCount = 25;
 
 let productArray = [];
@@ -93,17 +92,6 @@ function handleShowResults() {
   }
   resultButton.removeEventListener('click', handleShowResults);
 
-  let productNames = [];
-  let productViews = [];
-  let productClicks = [];
-
-  for (let i = 0; i < productArray.length; i++) {
-    productNames.push(productArray[i].itemName);
-    productViews.push(productArray[i].views);
-    productClicks.push(productArray[i].clicks);
-  }
-  console.log(productNames);
-
 }
 
 
@@ -119,8 +107,6 @@ function handleImageClick(event) {
     }
   }
 
-
-
   voteCount--;
 
   renderRandomImage();
@@ -134,11 +120,54 @@ function handleImageClick(event) {
 
     localStorage.setItem('myProducts', stringifiedProducts);
 
-    resultButton.hidden=(false);
+    resultButton.hidden = (false);
   }
 }
 
 renderRandomImage();
 
+
+/*
+function drawResultsGraph() {
+  (() => {
+    const canvas = document.querySelector('#canvas');
+    if (!canvas.getContext) {
+      return;
+    }
+
+    canvas.width = 500;
+    canvas.height = 500;
+
+    let resultsGraph = document.getElementById('canvas').getContext('2d');
+    new Chart(resultsGraph).Line(resultsData);
+
+    let resultsData = {
+      labels : ["January","February","March","April","May","June"],
+      datasets : [
+        {
+          fillColor : "rgba(172,194,132,0.4)",
+          strokeColor : "#ACC26D",
+          pointColor : "#fff",
+          pointStrokeColor : "#9DB86D",
+          data : [203,156,99,251,305,247]
+        }
+      ]
+    };
+
+    let productNames = [];
+    let productViews = [];
+    let productClicks = [];
+  
+    for (let i = 0; i < productArray.length; i++) {
+      productNames.push(productArray[i].itemName);
+      productViews.push(productArray[i].views);
+      productClicks.push(productArray[i].clicks);
+    }
+    console.log(productNames);
+
+  })();
+}
+drawResultsGraph();
+*/
 products.addEventListener('click', handleImageClick);
 resultButton.addEventListener('click', handleShowResults);
