@@ -114,10 +114,12 @@ function handleImageClick(event) {
   console.log('image clicked >>>', productClicked);
 
   for (let i = 0; i < productArray.length; i++) {
-    if (productArray[i].name === productClicked) {
+    if (productArray[i].itemName === productClicked) {
       productArray[i].clicks++;
     }
   }
+
+
 
   voteCount--;
 
@@ -135,9 +137,6 @@ function handleImageClick(event) {
     resultButton.hidden=(false);
   }
 }
-
-
-
 
 renderRandomImage();
 
