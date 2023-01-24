@@ -113,14 +113,12 @@ function handleShowResults() {
     data: {
       labels: productNames,
       datasets: [
-
         {
           fillColor: '#48A497',
           strokeColor: '#48A4D1',
           label: 'views',
           data: productViews
         },
-
         {
           fillColor: '#48A497',
           strokeColor: '#48A4D1',
