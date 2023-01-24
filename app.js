@@ -1,7 +1,8 @@
-'use strict';
-console.log('hello');
-console.log('hello');
 
+
+'use strict';
+
+console.log('hello');
 
 let products = document.getElementById('products');
 let imgOne = document.getElementById('productOne');
@@ -10,7 +11,6 @@ let imgThree = document.getElementById('productThree');
 
 let resultButton = document.getElementById('viewResults');
 let resultsContainer = document.getElementById('results-container');
-
 
 let voteCount = 25;
 
@@ -104,7 +104,38 @@ function handleShowResults() {
   }
   console.log(productNames);
 
+  console.log(productNames);
+
+  let resultsGraph = document.getElementById('results-graph').getContext('2d');
+
+  let resultsData = {
+    type: 'bar',
+    data: {
+      labels: productNames,
+      datasets: [
+
+        {
+          fillColor: '#48A497',
+          strokeColor: '#48A4D1',
+          label: 'views',
+          data: productViews
+        },
+
+        {
+          fillColor: '#48A497',
+          strokeColor: '#48A4D1',
+          label: 'clicks',
+          data: productClicks
+        },
+      ]
+    }
+
+  };
+  new Chart(resultsGraph, resultsData);
 }
+
+
+
 
 
 function handleImageClick(event) {
@@ -119,8 +150,6 @@ function handleImageClick(event) {
     }
   }
 
-
-
   voteCount--;
 
   renderRandomImage();
@@ -134,7 +163,7 @@ function handleImageClick(event) {
 
     localStorage.setItem('myProducts', stringifiedProducts);
 
-    resultButton.hidden=(false);
+    resultButton.hidden = (false);
   }
 }
 
@@ -142,3 +171,4 @@ renderRandomImage();
 
 products.addEventListener('click', handleImageClick);
 resultButton.addEventListener('click', handleShowResults);
+
