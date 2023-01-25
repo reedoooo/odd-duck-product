@@ -23,11 +23,12 @@
         <div id="results-summary-column">
             <h2>Results</h2>
             <ul id="results-container">
-
+                <div id="button-container">
+                    <button id="viewResults" hidden=true>View Results</button>
+                    <button id="clear" hidden=true>Clear Results</button>
+                </div>
             </ul>
-            <div id="button-container">
-                <button id="viewResults" hidden=true>View Results</button>
-            </div>
+
         </div>
         <div id="product-section">
             <div id="products">
@@ -53,10 +54,10 @@
                     eum
                     error earum eos accusamus molestias.</p>
             </div>
+            <div id="canvas-div">
+                <canvas id="results-graph" height="500" width="500"></canvas>
+            </div>
         </div>
-        </div>
-        <div id="canvas-div">
-            <canvas id="results-graph"></canvas>
         </div>
     </main>
     <script src="./app.js"></script>
