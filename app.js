@@ -15,7 +15,7 @@ let clearButton = document.getElementById('clear');
 
 let voteCount = 25;
 
-let productArray = [];
+let productArray = []; 
 let randomProductArray = [];
 
 function Product(itemName, fileExtension = 'jpg') {
@@ -86,6 +86,7 @@ if (parsedProducts) {
 function handleShowResults() {
   console.log('voteCount', voteCount);
   if (voteCount === 0) {
+
     for (let i = 0; i < productArray.length; i++) {
       let liElem = document.createElement('li');
       liElem.textContent = `${productArray[i].itemName} was viewed: ${productArray[i].views} time(s) and clicked: ${productArray[i].clicks}`;
@@ -131,6 +132,8 @@ function handleShowResults() {
   new Chart(resultsGraph, resultsData);
 }
 
+
+
 function handleImageClick(event) {
   // console.dir(event.target);
 
@@ -160,6 +163,7 @@ function handleImageClick(event) {
     clearButton.hidden = (false);
   }
 }
+
 
 function deleteProducts(){
   localStorage.clear();
