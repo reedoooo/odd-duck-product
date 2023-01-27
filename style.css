@@ -141,3 +141,8 @@ ul li {
 canvas {
     border: thin solid black;
 }
+
+canvas div {
+    height:auto;
+    width:auto;
+}
